@@ -1,0 +1,62 @@
+{
+  "name": "@shariqriazz/mcp-ragdocs",
+  "version": "1.0.0",
+  "description": "An MCP server for semantic documentation search and retrieval using vector databases (Qdrant) and multiple embedding providers (Ollama, OpenAI, Google Gemini) to augment LLM capabilities.",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "mcp-ragdocs": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "start": "node build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rag",
+    "documentation",
+    "vector-database",
+    "qdrant",
+    "ollama",
+    "openai",
+    "gemini",
+    "llm"
+  ],
+  "author": "shariqriazz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shariqriazz/mcp-ragdocs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shariqriazz/mcp-ragdocs/issues"
+  },
+  "homepage": "https://github.com/shariqriazz/mcp-ragdocs#readme",
+  "dependencies": {
+    "@google/genai": "^0.8.0",
+    "@modelcontextprotocol/sdk": "1.0.3",
+    "@qdrant/js-client-rest": "1.12.0",
+    "axios": "1.7.9",
+    "cheerio": "1.0.0",
+    "ollama": "^0.5.11",
+    "openai": "4.76.2",
+    "playwright": "1.49.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
